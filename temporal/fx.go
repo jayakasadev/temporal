@@ -870,6 +870,7 @@ func verifyPersistenceCompatibleVersion(config config.Persistence, persistenceSe
 	if err := sql.VerifyCompatibleVersion(config, persistenceServiceResolver); err != nil {
 		return fmt.Errorf("sql schema version compatibility check failed: %w", err)
 	}
+	// noop for MongoDB since its schemaless
 	return nil
 }
 
