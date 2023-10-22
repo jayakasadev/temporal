@@ -261,6 +261,8 @@ type (
 		FaultInjection *FaultInjection `yaml:"faultInjection"`
 		// Cassandra contains the config for a cassandra datastore
 		Cassandra *Cassandra `yaml:"cassandra"`
+		// MongoDB contains the config for a cassandra datastore
+		MongoDB *MongoDB `yaml:"mongodb"`
 		// SQL contains the config for a SQL based datastore
 		SQL *SQL `yaml:"sql"`
 		// Custom contains the config for custom datastore implementation
@@ -384,6 +386,10 @@ type (
 		Consistency string `yaml:"consistency"`
 		// SerialConsistency sets the consistency for the serial prtion of queries. Values identical to gocql SerialConsistency values. (defaults to LOCAL_SERIAL if not set)
 		SerialConsistency string `yaml:"serialConsistency"`
+	}
+
+	// MongoDB contains configuration to connect to MongoDB cluster
+	MongoDB struct {
 	}
 
 	// SQL is the configuration for connecting to a SQL backed datastore
